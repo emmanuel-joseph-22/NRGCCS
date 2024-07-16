@@ -18,5 +18,23 @@
         "titleBar.inactiveBackground": "#83256199",
         "titleBar.inactiveForeground": "#e7e7e799"
     },
+    "restoreTerminals.terminals": [
+        {
+            "splitTerminals": [
+                {
+                    "name": "npm install",
+                    "commands": [
+                    
+                    ]
+                },
+                {
+                    "name": "git",
+                    "commands": [
+                        "git fetch"
+                    ]
+                }
+            ]
+        },
+    ],
     "peacock.color": "#832561"
 }
