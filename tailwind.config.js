@@ -2,7 +2,17 @@
 export default {
   content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   theme: {
-    extend: {},
+
+    extend: {
+      fontFamily: {
+        'sans': ['sans-serif'],
+        'roboto-condensed': ['"Roboto Condensed"', 'sans-serif'],
+      },
+      colors: {
+        customRed: '#A52639',
+        footerRed: '#721C2F',
+      }
+    },
   },
   plugins: [],
 }
