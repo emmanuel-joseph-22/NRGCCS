@@ -8,6 +8,7 @@ import Module_1 from '../views/Modules/Module1/Module1.vue';
 import Module_2 from '../views/Modules/Module2/Module2.vue';
 import Module_3 from '../views/Modules/Module3/Module3.vue';
 import Module_4 from '../views/Modules/Module4/Module4.vue';
+import Module1_1 from '@/views/Modules/Module1/Module1_1.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -54,6 +55,11 @@ const router = createRouter({
       path: '/module4',
       name: 'module4',
       component: Module_4,
+    },
+    {
+      path: '/module1_1',
+      name: 'module1_1',
+      component: Module1_1,
     }
   ]
 })
