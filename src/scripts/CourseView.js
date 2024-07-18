@@ -72,6 +72,7 @@ export default {
                     displayName: 'Module 1',
                     active: false,
                     submodules: [
+                        { name: 'Submodule1', component: Module1, displayName: 'Submodule 1' },
                         { name: 'Submodule1.1', component: Module1_1, displayName: 'Submodule 1.1' },
                         { name: 'Submodule1.2', component: Module1_2, displayName: 'Submodule 1.2' }
                         
@@ -83,6 +84,7 @@ export default {
                     displayName: 'Module 2',
                     active: false,
                     submodules: [
+                        { name: 'Submodule2', component: Module2, displayName: 'Submodule 2' },
                         { name: 'Submodule2.1', component: Module2_1, displayName: 'Submodule 2.1' },
                         { name: 'Submodule2.2', component: Module2_2, displayName: 'Submodule 2.2' },
                     ]
@@ -93,6 +95,7 @@ export default {
                     displayName: 'Module 3',
                     active: false,
                     submodules: [
+                        { name: 'Submodule3', component: Module3, displayName: 'Submodule 3' },
                         { name: 'Submodule3.1', component: Module3_1, displayName: 'Submodule 3.1' },
                         { name: 'Submodule3.2', component: Module3_2, displayName: 'Submodule 3.2' },
                     ]
@@ -103,6 +106,7 @@ export default {
                     displayName: 'Module 4',
                     active: false,
                     submodules: [
+                        { name: 'Submodule4', component: Module4, displayName: 'Submodule 4' },
                         { name: 'Submodule4.1', component: Module4_1, displayName: 'Submodule 4.1' },
                         { name: 'Submodule4.2', component: Module4_2, displayName: 'Submodule 4.2' },
                     ]
