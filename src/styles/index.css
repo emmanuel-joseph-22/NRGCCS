@@ -1,3 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Custom Button Classes */
+.btn {
+    @apply text-white cursor-pointer px-4 py-3 rounded text-white cursor-pointer rounded-lg bg-red-600 hover:bg-red-400 mx-auto my-3;
+}
+
+.btn-primary {
+    @apply bg-red-500 hover:bg-red-700 mx-auto;
+}
+
+.btn-secondary {
+    @apply bg-gray-500 hover:bg-gray-700;
+}
+
+.module_btn{
+    @apply bg-redBtn shadow-lg px-3 py-2 text-white rounded-lg;
+}
