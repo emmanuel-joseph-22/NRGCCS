@@ -3,9 +3,12 @@
         <div class="text-center">
             <h1 class="text-6xl font-bold text-gray-700 mb-4">MODULE 3</h1>
             <hr class="thick-border w-1/3 mx-auto mb-8">
-            <button class="btn1 text-gray-700 py-2 px-6 text-lg rounded-xl">
-                START MODULE 3
-            </button>
+            <router-link :to="{ name: 'module3_1' }">
+                <button class="btn1 text-gray-700 py-2 px-6 text-lg rounded-xl">
+                    START MODULE 3
+                </button>                
+            </router-link>
+
         </div>
     </module-page>
 </template>

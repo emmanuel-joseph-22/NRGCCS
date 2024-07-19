@@ -1,3 +1,5 @@
 <template>
-    Module 1.1
+        <div>
+            Module 1.1
+        </div>
 </template>

@@ -1,4 +1,3 @@
-<script src="../scripts/nav_bar.js"></script>
 <template>
     <nav class="w-full flex px-10 h-auto sticky top-0 z-40 py-2" style="background-color: #A52639;">
         <ul class="flex text-white gap-2 w-full items-center">
@@ -19,28 +18,28 @@
     
                 <li 
                     @mouseover="toggleMenu=true" @mouseleave="toggleMenu=false"
-                    class="py-5 w-4/12 hover:bg-red-500 hover:scale-125 duration-100 text-center font-roboto-condensed text-lg">
+                    class="py-5 w-4/12 hover:bg-red-500 hover:scale-125 duration-100 text-center font-roboto-condensed text-lg cursor-pointer">
                     English Modules
                     <div class="module_menu text-customRed" v-if="toggleMenu">
-                        <router-link :to="{ name: 'modules' }" class="w-full">
+                        <router-link :to="{ name: 'module1' }" class="w-full">
                             <li 
                                 class="py-4 text-center font-roboto-condensed text-lg" >
                                 Module 1
                             </li>
                         </router-link>
-                        <router-link :to="{ name: 'modules' }" class="w-full">
+                        <router-link :to="{ name: 'module2' }" class="w-full">
                             <li 
                                 class="py-4 text-center font-roboto-condensed text-lg" >
                                 Module 2
                             </li>
                         </router-link>
-                        <router-link :to="{ name: 'modules' }" class="w-full">
+                        <router-link :to="{ name: 'module3' }" class="w-full">
                             <li 
                                 class="py-4 text-center font-roboto-condensed text-lg" >
                                 Module 3
                             </li>
                         </router-link>
-                        <router-link :to="{ name: 'modules' }" class="w-full">
+                        <router-link :to="{ name: 'module4' }" class="w-full">
                             <li 
                                 class="py-4 text-center font-roboto-condensed text-lg" >
                                 Module 4
@@ -65,6 +64,16 @@
         </ul>
     </nav>
 </template>
+<script>
+
+    export default{
+        data(){
+            return {
+                toggleMenu: false,
+            }
+        },
+    }
+</script>
 <style scoped>
     .module_menu{
         background-color: #ffe8e9;
