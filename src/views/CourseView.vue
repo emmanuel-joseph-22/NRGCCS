@@ -4,8 +4,9 @@
         <!-- modules navigation bar -->
         <div class="flex flex-col nav_bar font-roboto-condensed">
             <div class="w-full ml-4">PROGRESS</div>
-            <div v-for="(module, index) in modules" :key="index" class="">
-                <div @click="toggleModule(index)" :class="{ 'isActive': module.active }" class="module-item flex flex-row py-3 px-5 my-2 items-center cursor-pointer rounded-lg text-lg">
+            <!-- modules -->
+            <div v-for="(module, ModIndex) in modules" :key="ModIndex" class="">
+                <div @click="toggleModule(ModIndex)" :class="{ 'isActive': module.active }" class="module-item flex flex-row py-3 px-5 my-2 items-center cursor-pointer rounded-lg text-lg">
                     <div class="mx-2">
                         <svg v-if="!module.active" width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M4 19V6.2C4 5.0799 4 4.51984 4.21799 4.09202C4.40973 3.71569 4.71569 3.40973 5.09202 3.21799C5.51984 3 6.0799 3 7.2 3H16.8C17.9201 3 18.4802 3 18.908 3.21799C19.2843 3.40973 19.5903 3.71569 19.782 4.09202C20 4.51984 20 5.0799 20 6.2V17H6C4.89543 17 4 17.8954 4 19ZM4 19C4 20.1046 4.89543 21 6 21H20M9 7H15M9 11H15M19 17V21" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -16,16 +17,20 @@
                     </div>
                     <span class="text-white">{{ module.displayName }}</span>
                 </div>
+                <!-- units -->
                 <div v-if="module.active" class="submodules flex flex-col w-full">
                     <div v-for="(submodule, subIndex) in module.submodules" :key="subIndex" class="submodule ml-4">
-                        <router-link :to="{ name: submodule.route }">
-                            <div  :class="{ 'isSubmoduleActive': submodule.active }"  class="sub my-1 px-5 py-2 mr-1 cursor-pointer">
-                                {{ submodule.displayName }}
-                            </div>
-                        </router-link>
-                        <!-- <div @click="showSubComponent(submodule.name)"  :class="{ 'isSubmoduleActive': submodule.active }"  class="sub my-1 px-5 py-2 mr-1 cursor-pointer">
+                        <div @click="showSubComponent(submodule.name)"  :class="{ 'isSubmoduleActive': submodule.active }"  class="sub my-1 px-5 py-2 mr-1 cursor-pointer">
                             {{ submodule.displayName }}
-                        </div> -->
+                        </div>
+                        <!-- lessons -->
+                        <div v-if="submodule.active" class="flex flex-col w-full">
+                            <div v-for="(lesson, lesson_index) in submodule.lessons" :key="l_index" class="ml-4">
+                                <div @click="goToLesson(lesson_index, ModIndex, subIndex)" :class="{ 'isLessonActive': lesson.active }"  class="my-1 px-5 py-2 mr-1 cursor-pointer">
+                                    {{ lesson.displayName }}
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -48,6 +53,10 @@
     border-left: 5px solid #DD3745;
     color: #DD3745;
     font-weight: bold;
+}
+.isLessonActive{
+    color: white;
+    background-color: #3F1F3C;
 }
 .submodule {
     border-left: 1px solid #DD3745;
