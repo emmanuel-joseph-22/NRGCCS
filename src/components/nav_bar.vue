@@ -4,11 +4,12 @@
     style="
     background-color: #A52639; 
     border-bottom: 3px solid #721c2f;
+    filter: drop-shadow(0 5px 5px rgb(0 0 0 / 0.5));
     ">
 
         <ul class="flex text-white gap-2 w-full items-center">
             <li class="flex item-centerflex-row w-1/12 font-roboto-condensed text-2xl gap-2">
-                <img class="w-1/3 h-auto" src="/public/logo/NRGCCS.png" alt="">
+                <img class="w-1/3 h-auto" src="/logo/NRGCCS.png" alt="">
                 <a href="https://ieducationphl.ched.gov.ph/nrgccs/" target="_blank" class="flex items-center">
                     <span class="py-2">NRGCCS</span>
                 </a>
