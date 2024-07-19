@@ -64,11 +64,14 @@
             </div>    
         </div>
         <!-- resources videos -->
-        <div class="grid">
-            <div>vid 1</div>
-            <div>vid 2</div>
-            <div>vid 3</div>
-            <div>vid 4</div>
+        <div class="grid grid-cols-3 grid-rows-3 gap-4">
+            <!-- First column with multiple rows -->
+            <div class="col-span-1 row-span-1 flex items-center justify-center border border-black">1A</div>
+            <div class="col-span-1 row-span-1 flex items-center justify-center border border-black">1B</div>
+            <div class="col-span-1 row-span-1 flex items-center justify-center border border-black">1C</div>
+        
+            <!-- Second column spanning all rows -->
+            <div class="col-span-2 row-span-3 border-1 flex items-center justify-center border-black">Column 2</div>
         </div>
     </section>
     <!-- about us -->
@@ -84,15 +87,14 @@
         </div>
     </section>
     <!-- footer -->
-    <section class="bg-footerRed w-full font-roboto-condensed flex flex-row px-5 py-5 items-center justify-center">
-        <div class="w-2/12 px-4 text-2xl text-white">GLOBAL ENGLISH COMPETITIVENESS</div>
-        <div class="w-1/12 mx-2"><img src="/public/logo/NRGCCS.png" /></div>
-        <div class="w-1/12 mx-2"><img src="/public/logo/logo-dos.png" /></div>
-        <div class="w-1/12 mx-2"><img src="/public/logo/CHED-LOGO_orig.png" /></div>
-        <div class="w-1/12 mx-2"><img src="/public/logo/University_of_the_Visayas-removebg-preview.png" /></div>
-        <div class="w-1/12 mx-2"><img src="/public/logo/ces.png" /></div>
-        <div class="w-1/12 mx-2"><img src="/public/logo/LPU-Logo-256x256.png" /></div>
-        <div class="w-1/12 mx-2"><img src="/public/logo/BatStateU-NEU-Logo.png" /></div>
+    <section class="bg-footerRed w-full font-roboto-condensed flex flex-row px-3 py-5 items-center justify-center">
+        <div class="w-8/12 px-4 text-2xl text-white">GLOBAL ENGLISH COMPETITIVENESS</div>
+        <div class="ml-auto w-4/12 flex flex-row items-center">
+            <div class="w-3/12 mx-2"><img src="/public/logo/NRGCCS.png" /></div>
+            <div class="w-3/12 mx-2"><img src="/public/logo/logo-dos.png" /></div>
+            <div class="w-3/12 mx-2"><img src="/public/logo/CHED-LOGO_orig.png" /></div>
+            <div class="w-3/12 mx-2"><img src="/public/logo/BatStateU-NEU-Logo.png" /></div>
+        </div>
     </section>
 </main-page>
 </template>
