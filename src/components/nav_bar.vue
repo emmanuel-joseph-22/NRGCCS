@@ -1,7 +1,6 @@
 <script src="../scripts/nav_bar.js"></script>
 <template>
     <nav class="w-full flex px-10 h-auto sticky top-0 z-40 py-2" style="background-color: #A52639;">
-        
         <ul class="flex text-white gap-2 w-full items-center">
             <li class="flex flex-row w-1/12 py-3 font-roboto-condensed text-2xl gap-2">
                 <img class="w-1/3" src="/public/logo/NRGCCS.png" alt="">

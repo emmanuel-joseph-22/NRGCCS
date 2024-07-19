@@ -21,7 +21,8 @@
                 </div>
             </div>
         </div>
-        <div class="main_cont flex flex-col px-3vw py-8 rounded-lg">
+        <!-- modules view -->
+        <div class="main_cont flex flex-col px-3vw py-8">
             <component :is="currentSubComponent"></component>
         </div>
     </main-page>
@@ -45,9 +46,14 @@
     margin-left: 252px;
     margin-top: 2px;
     height: auto;
+    background-color: rgb(218, 216, 216);
 }
 .module-container {
-    background-color: #2C0101;
+
+}
+.module-item {
+    height: 60px;
+    background-color: #A52639;
 }
 .nav_bar {
     position: fixed;
@@ -58,7 +64,7 @@
     display: flex;
     box-sizing: border-box;
     padding: 90px 14px;
-    background-color: #47131F;
+    background-color: #FBFBF9;
     z-index: 10;
 }
 
@@ -72,7 +78,7 @@
 }
 
 .nav_bar div.isActive {
-    background-color: #1E1E1E;
+    background-color: rgba(30, 30, 30, 0.75);
     border: 2px solid white;
 }
 
