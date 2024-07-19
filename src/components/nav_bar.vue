@@ -1,10 +1,16 @@
 <script src="../scripts/nav_bar.js"></script>
 <template>
-    <nav class="w-full flex px-10 h-auto sticky top-0 z-40 py-2" style="background-color: #A52639;">
+    <nav class="w-full flex px-10 h-auto sticky top-0 z-40 py-2" 
+
+    style="
+    background-color: #A52639; 
+    border-bottom: 3px solid #721c2f;
+    ">
+
         <ul class="flex text-white gap-2 w-full items-center">
-            <li class="flex flex-row w-1/12 py-3 font-roboto-condensed text-2xl gap-2">
-                <img class="w-1/3" src="/public/logo/NRGCCS.png" alt="">
-                <a href="https://ieducationphl.ched.gov.ph/nrgccs/" target="_blank">
+            <li class="flex item-centerflex-row w-1/12 font-roboto-condensed text-2xl gap-2">
+                <img class="w-1/3 h-auto" src="/public/logo/NRGCCS.png" alt="">
+                <a href="https://ieducationphl.ched.gov.ph/nrgccs/" target="_blank" class="flex items-center">
                     <span class="py-2">NRGCCS</span>
                 </a>
             </li>

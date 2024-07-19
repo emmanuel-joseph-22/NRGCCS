@@ -2,32 +2,32 @@
 <template>
 <main-page>
     <!-- landing section -->
-    <section class="landing_section w-full">
-        <div class="mx-auto w-8/12 justify-content items-center mt-13 pt-12 h-screen"> 
-            <div class="text-8xl w-10/12 font-roboto-condensed flex flex-col text-white items-center mx-auto">
-                <div class="mx-auto">GLOBAL ENGLISH</div> 
-                <div class="mx-auto">COMPETITIVE</div> 
-                <div class="mx-auto">MODULES</div>
-            </div>
-            <div class="w-full h-2" style="background-color: #A52639;"></div>
-            <router-link :to="{ name: 'modules' }">
-                <div class="btn w-2/12 flex justify-content">
-                    -Start Learning-
-                </div>                
-            </router-link>
+    <section class="w-full bg-no-repeat bg-center h-screen flex flex-col justify-center items-center" style="background: url('/background/bg1.png')">
+    <div class="text-center">
+        <div class="text-8xl font-roboto-condensed text-white">
+            <div>GLOBAL ENGLISH</div> 
+            <div>COMPETITIVE</div> 
+            <div>MODULES</div>
         </div>
-    </section>
+        <div class="w-full h-2" style="background-color: #A52639;"></div> 
+        <router-link :to="{ name: 'modules' }">
+            <div class="btn w-3/12 mt-4"> 
+                -Start Learning-
+            </div>                
+        </router-link>
+    </div>
+</section>
     <!-- overview -->
     <section class="w-full bg-customRed text-white font-roboto-condensed py-12">
-        <div class="mx-12 flex flex-col">
+        <div class="mx-auto w-8/12 text-justify flex flex-col">
             <h5 class="text-bold text-lg mx-5">Overview</h5>
-            <p class="mx-5">The National Roadmap for Global Competitiveness in Communication Skills (NRGCCS) 
+            <p class="mt-6 mx-5 text-lg text-justify">The National Roadmap for Global Competitiveness in Communication Skills (NRGCCS) 
                 is an initiative to ensure our Filipino students remain competitive with their ASEAN 
                 and global counterparts in terms of English language communication skills.</p>
-            <p class="mx-5">The National Roadmap for Global Competitiveness in Communication Skills (NRGCCS) 
+            <p class="mt-10 mx-5 text-justify">The National Roadmap for Global Competitiveness in Communication Skills (NRGCCS) 
                 Project was launched by the Commission on Higher Education (CHED), alongside government, 
                 academe, and industry partners in 2020.</p>
-            <p class="mx-5">Part of the short-term targets of the NRGCCS Project is to further raise the level of 
+            <p class="mt-10 mx-5 text-justify">Part of the short-term targets of the NRGCCS Project is to further raise the level of 
                 awareness and adoption of Philippine higher education institutions to international 
                 standards and teaching techniques and develop our competitive advantage in this area to 
                 contribute to our progress towards a globally competitive knowledge economy. Its main goal 
@@ -98,11 +98,3 @@
     </section>
 </main-page>
 </template>
-
-<style scoped>
-.landing_section{
-    background: url('/background/bg1.png');
-    background-size: cover;
-    background-position: center;
-}
-</style>
