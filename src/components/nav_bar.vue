@@ -26,29 +26,29 @@
                     @mouseover="toggleMenu=true" @mouseleave="toggleMenu=false"
                     class="py-5 w-4/12 hover:bg-red-500 hover:scale-125 duration-100 text-center font-roboto-condensed text-lg cursor-pointer">
                     English Modules
-                    <div class="module_menu text-customRed" v-if="toggleMenu">
+                    <div class="module_menu absolute text-customRed px-3" v-if="toggleMenu">
                         <router-link :to="{ name: 'module1' }" class="w-full">
                             <li 
-                                class="py-4 text-center font-roboto-condensed text-lg" >
-                                Module 1
+                                class="py-2 flex text-center font-roboto-condensed" >
+                                English for Academic Purposes
                             </li>
                         </router-link>
                         <router-link :to="{ name: 'module2' }" class="w-full">
                             <li 
-                                class="py-4 text-center font-roboto-condensed text-lg" >
-                                Module 2
+                                class="py-2 flex text-center font-roboto-condensed" >
+                                Everyday English
                             </li>
                         </router-link>
                         <router-link :to="{ name: 'module3' }" class="w-full">
                             <li 
-                                class="py-4 text-center font-roboto-condensed text-lg" >
-                                Module 3
+                                class="py-2 flex text-center font-roboto-condensed" >
+                                English for Professional Communication
                             </li>
                         </router-link>
                         <router-link :to="{ name: 'module4' }" class="w-full">
                             <li 
-                                class="py-4 text-center font-roboto-condensed text-lg" >
-                                Module 4
+                                class="py-2 flex text-center font-roboto-condensed" >
+                                English for Global and Intercultural Communication
                             </li>
                         </router-link>
                     </div>
@@ -62,7 +62,7 @@
                 </router-link> -->
                 <router-link :to="{ name: 'newsletter' }" class="w-4/12 hover:bg-red-500 hover:scale-125 ease-in-out	duration-100">
                     <li 
-                        class="py-5  text-center font-roboto-condensed text-lg" >
+                        class="py-5 text-center font-roboto-condensed text-lg" >
                         Newsletter
                     </li>
                 </router-link>
@@ -83,10 +83,8 @@
 <style scoped>
     .module_menu{
         background-color: #ffe8e9;
-        width: 170px;
-        height: auto;
-        position: absolute;
         z-index: 41;
+        width: 250px;
         margin-top: 20px;
     }
 </style>

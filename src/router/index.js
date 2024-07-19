@@ -9,25 +9,21 @@ import Module_2 from '../views/Modules/Module2/Module2.vue';
 import Module_3 from '../views/Modules/Module3/Module3.vue';
 import Module_4 from '../views/Modules/Module4/Module4.vue';
 
-import Module1_1 from '../views/Modules/Module1/Module1_1.vue';
-import Module1_2 from '../views/Modules/Module1/Module1_2.vue';
-import Module1_3 from '../views/Modules/Module1/Module1_3.vue';
-import Module1_4 from '../views/Modules/Module1/Module1_4.vue';
+import Module1_1 from '../views/Modules/Module1/Unit1View.vue';
+import Module1_2 from '../views/Modules/Module1/Unit2View.vue';
+import Module1_3 from '../views/Modules/Module1/Unit3View.vue';
 
-import Module2_1 from '../views/Modules/Module2/Module2_1.vue';
-import Module2_2 from '../views/Modules/Module2/Module2_2.vue';
-import Module2_3 from '../views/Modules/Module2/Module2_3.vue';
-import Module2_4 from '../views/Modules/Module2/Module2_4.vue';
+import Module2_1 from '../views/Modules/Module2/Unit1View.vue';
+import Module2_2 from '../views/Modules/Module2/Unit2View.vue';
+import Module2_3 from '../views/Modules/Module2/Unit3View.vue';
 
-import Module3_1 from '../views/Modules/Module3/Module3_1.vue';
-import Module3_2 from '../views/Modules/Module3/Module3_2.vue';
-import Module3_3 from '../views/Modules/Module3/Module3_3.vue';
-import Module3_4 from '../views/Modules/Module3/Module3_4.vue';
+import Module3_1 from '../views/Modules/Module3/Unit1View.vue';
+import Module3_2 from '../views/Modules/Module3/Unit2View.vue';
+import Module3_3 from '../views/Modules/Module3/Unit3View.vue';
 
-import Module4_1 from '../views/Modules/Module4/Module4_1.vue';
-import Module4_2 from '../views/Modules/Module4/Module4_2.vue';
-import Module4_3 from '../views/Modules/Module4/Module4_3.vue';
-import Module4_4 from '../views/Modules/Module4/Module4_4.vue';
+import Module4_1 from '../views/Modules/Module4/Unit1View.vue';
+import Module4_2 from '../views/Modules/Module4/Unit2View.vue';
+import Module4_3 from '../views/Modules/Module4/Unit3View.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -65,11 +61,7 @@ const router = createRouter({
           name: 'module1_3',
           component: Module1_3,
         },
-        {
-          path: '/module1/unit4',
-          name: 'module1_4',
-          component: Module1_4,
-        },
+
         {
           path: '/module2',
           name: 'module2',
@@ -90,11 +82,7 @@ const router = createRouter({
           name: 'module2_3',
           component: Module2_3,
         },
-        {
-          path: '/module2/unit4',
-          name: 'module2_4',
-          component: Module2_4,
-        },
+
         {
           path: '/module3',
           name: 'module3',
@@ -115,11 +103,7 @@ const router = createRouter({
           name: 'module3_3',
           component: Module3_3,
         },
-        {
-          path: '/module3/unit4',
-          name: 'module3_4',
-          component: Module3_4,
-        },
+
         {
           path: '/module4',
           name: 'module4',
@@ -140,11 +124,7 @@ const router = createRouter({
           name: 'module4_3',
           component: Module4_3,
         },
-        {
-          path: '/module4/unit4',
-          name: 'module4_4',
-          component: Module4_4,
-        },
+
       ]
     },
     {

@@ -1,14 +1,28 @@
 <script src="../../../scripts/modules/Module1.js"></script>
 <template>
-        <div class="text-center">
-            <h1 class="text-6xl font-bold text-gray-700 mb-4">MODULE 1</h1>
-            <hr class="thick-border w-1/3 mx-auto mb-8">
-            <router-link :to="{ name: 'module1_1' }">
+        <section class="flex flex-col text-left mx-5">
+            <h1 class="text-4xl font-bold text-gray-700">MODULE 1</h1>
+            <h2 class="text-xl text-gray-400">Overview</h2>
+            <p class="my-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vehicula metus ac varius consectetur. 
+                Donec eros dui, ornare vitae sem ac, pretium dapibus tortor. Morbi a ipsum lectus. Vestibulum quam odio, 
+                mollis eget commodo et, luctus et leo. Etiam neque nisi, tincidunt sed augue nec, accumsan gravida massa.</p>    
+        
+            <div class="mx-auto w-1/2">
+                <h1 class="text-xl">Course Content</h1>
+                <ol class="text-left">
+                    <li>Daily Life in School</li>
+                    <li>Academic Presentation</li>
+                    <li>Research Writing</li>
+                </ol>
+            </div>
+            <!-- <hr class="thick-border w-1/3 mx-auto mb-8"> -->
+            <router-link :to="{ name: 'module1_1' }" class="mt-auto">
                 <button class="module_btn">
                     START MODULE 1
                 </button>
             </router-link>
-        </div>
+
+        </section>
 </template>
 
 <style scoped>

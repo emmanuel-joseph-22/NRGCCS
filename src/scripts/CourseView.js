@@ -1,25 +1,24 @@
 import MainView from "../views/MainView.vue";
 
 import Module1 from "../views/Modules/Module1/Module1.vue";
-import Module1_1 from "../views/Modules/Module1/Module1_1.vue";
-import Module1_2 from "../views/Modules/Module1/Module1_2.vue";
-import Module1_3 from "../views/Modules/Module1/Module1_3.vue";
-import Module1_4 from "../views/Modules/Module1/Module1_4.vue";
+import Module1_1 from '../views/Modules/Module1/Unit1View.vue';
+import Module1_2 from '../views/Modules/Module1/Unit2View.vue';
+import Module1_3 from '../views/Modules/Module1/Unit3View.vue';
+
 import Module2 from "../views/Modules/Module2/Module2.vue";
-import Module2_1 from "../views/Modules/Module2/Module2_1.vue";
-import Module2_2 from "../views/Modules/Module2/Module2_2.vue";
-import Module2_3 from "../views/Modules/Module2/Module2_3.vue";
-import Module2_4 from "../views/Modules/Module2/Module2_4.vue";
+import Module2_1 from '../views/Modules/Module2/Unit1View.vue';
+import Module2_2 from '../views/Modules/Module2/Unit2View.vue';
+import Module2_3 from '../views/Modules/Module2/Unit3View.vue';
+
 import Module3 from "../views/Modules/Module3/Module3.vue";
-import Module3_1 from "../views/Modules/Module3/Module3_1.vue";
-import Module3_2 from "../views/Modules/Module3/Module3_2.vue";
-import Module3_3 from "../views/Modules/Module3/Module3_3.vue";
-import Module3_4 from "../views/Modules/Module3/Module3_4.vue";
+import Module3_1 from '../views/Modules/Module3/Unit1View.vue';
+import Module3_2 from '../views/Modules/Module3/Unit2View.vue';
+import Module3_3 from '../views/Modules/Module3/Unit3View.vue';
+
 import Module4 from "../views/Modules/Module4/Module4.vue";
-import Module4_1 from "../views/Modules/Module4/Module4_1.vue";
-import Module4_2 from "../views/Modules/Module4/Module4_2.vue";
-import Module4_3 from "../views/Modules/Module4/Module4_3.vue";
-import Module4_4 from "../views/Modules/Module4/Module4_4.vue";
+import Module4_1 from '../views/Modules/Module4/Unit1View.vue';
+import Module4_2 from '../views/Modules/Module4/Unit2View.vue';
+import Module4_3 from '../views/Modules/Module4/Unit3View.vue';
 
 export default {
     // data() {
@@ -81,7 +80,6 @@ export default {
                         { name: 'Submodule1.1', component: Module1_1, displayName: 'UNIT 1', route: 'module1_1' },
                         { name: 'Submodule1.2', component: Module1_2, displayName: 'UNIT 2', route: 'module1_2' },
                         { name: 'Submodule1.3', component: Module1_3, displayName: 'UNIT 3', route: 'module1_3' },
-                        { name: 'Submodule1.4', component: Module1_4, displayName: 'UNIT 4', route: 'module1_4' }
                     ]
                 },
                 {
@@ -93,7 +91,6 @@ export default {
                         { name: 'Submodule2.1', component: Module2_1, displayName: 'UNIT 1', route: 'module2_1' },
                         { name: 'Submodule2.2', component: Module2_2, displayName: 'UNIT 2', route: 'module2_2' },
                         { name: 'Submodule2.3', component: Module2_3, displayName: 'UNIT 3', route: 'module2_3' },
-                        { name: 'Submodule2.4', component: Module2_4, displayName: 'UNIT 4', route: 'module2_4' }
                     ]
                 },
                 {
@@ -105,7 +102,6 @@ export default {
                         { name: 'Submodule3.1', component: Module3_1, displayName: 'UNIT 1', route: 'module3_1'  },
                         { name: 'Submodule3.2', component: Module3_2, displayName: 'UNIT 2', route: 'module3_2'  },
                         { name: 'Submodule3.3', component: Module3_3, displayName: 'UNIT 3', route: 'module3_3' },
-                        { name: 'Submodule3.4', component: Module3_4, displayName: 'UNIT 4', route: 'module3_4' }
                     ]
                 },
                 {
@@ -117,7 +113,6 @@ export default {
                         { name: 'Submodule4.1', component: Module4_1, displayName: 'UNIT 1', route: 'module4_1'  },
                         { name: 'Submodule4.2', component: Module4_2, displayName: 'UNIT 2', route: 'module4_2'  },
                         { name: 'Submodule4.3', component: Module4_3, displayName: 'UNIT 3', route: 'module4_3' },
-                        { name: 'Submodule4.4', component: Module4_4, displayName: 'UNIT 4', route: 'module4_4' }
                     ]
                 },
                 
