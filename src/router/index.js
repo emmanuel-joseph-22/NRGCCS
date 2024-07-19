@@ -8,7 +8,18 @@ import Module_1 from '../views/Modules/Module1/Module1.vue';
 import Module_2 from '../views/Modules/Module2/Module2.vue';
 import Module_3 from '../views/Modules/Module3/Module3.vue';
 import Module_4 from '../views/Modules/Module4/Module4.vue';
-import Module1_1 from '@/views/Modules/Module1/Module1_1.vue';
+
+import Module1_1 from '../views/Modules/Module1/Module1_1.vue';
+import Module1_2 from '../views/Modules/Module1/Module1_2.vue';
+
+import Module2_1 from '../views/Modules/Module2/Module2_1.vue';
+import Module2_2 from '../views/Modules/Module2/Module2_2.vue';
+
+import Module3_1 from '../views/Modules/Module3/Module3_1.vue';
+import Module3_2 from '../views/Modules/Module3/Module3_2.vue';
+
+import Module4_1 from '../views/Modules/Module4/Module4_1.vue';
+import Module4_2 from '../views/Modules/Module4/Module4_2.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -25,6 +36,68 @@ const router = createRouter({
       path: '/modules',
       name: 'modules',
       component: CourseView,
+      children: [
+        {
+          path: '/module1',
+          name: 'module1',
+          component: Module_1,
+        },
+        {
+          path: '/module1/unit1',
+          name: 'module1_1',
+          component: Module1_1,
+        },
+        {
+          path: '/module1/unit2',
+          name: 'module1_2',
+          component: Module1_2,
+        },
+        {
+          path: '/module2',
+          name: 'module2',
+          component: Module_2,
+        },
+        {
+          path: '/module2/unit1',
+          name: 'module2_1',
+          component: Module2_1,
+        },
+        {
+          path: '/module2/unit2',
+          name: 'module2_2',
+          component: Module2_2,
+        },
+        {
+          path: '/module3',
+          name: 'module3',
+          component: Module_3,
+        },
+        {
+          path: '/module3/unit1',
+          name: 'module3_1',
+          component: Module3_1,
+        },
+        {
+          path: '/module3/unit2',
+          name: 'module3_2',
+          component: Module3_2,
+        },
+        {
+          path: '/module4',
+          name: 'module4',
+          component: Module_4,
+        },
+        {
+          path: '/module4/unit1',
+          name: 'module4_1',
+          component: Module4_1,
+        },
+        {
+          path: '/module4/unit2',
+          name: 'module4_2',
+          component: Module4_2,
+        },
+      ]
     },
     {
       path: '/newsletter',
@@ -36,31 +109,8 @@ const router = createRouter({
       name: 'about',
       component: AboutView
     },
-    {
-      path: '/module1',
-      name: 'module1',
-      component: Module_1,
-    },
-    {
-      path: '/module2',
-      name: 'module2',
-      component: Module_2,
-    },
-    {
-      path: '/module3',
-      name: 'module3',
-      component: Module_3,
-    },
-    {
-      path: '/module4',
-      name: 'module4',
-      component: Module_4,
-    },
-    {
-      path: '/module1_1',
-      name: 'module1_1',
-      component: Module1_1,
-    }
+
+
   ]
 })
 
