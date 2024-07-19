@@ -702,6 +702,9 @@ export default {
                 this.modules.forEach(module => {
                     module.submodules.forEach(submodule => {
                         submodule.active = false;
+                        submodule.lessons.forEach((lesson) => {
+                            lesson.active = false;
+                        });
                     });
                 });
 

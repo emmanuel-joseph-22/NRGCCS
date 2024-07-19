@@ -2,7 +2,7 @@
 <template>
     <main-page>
         <!-- modules navigation bar -->
-        <div class="flex flex-col nav_bar font-roboto-condensed">
+        <div class="flex flex-col nav_bar font-roboto-condensed overflow-y-auto">
             <div class="w-full ml-4">PROGRESS</div>
             <!-- modules -->
             <div v-for="(module, ModIndex) in modules" :key="ModIndex" class="">

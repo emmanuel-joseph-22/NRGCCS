@@ -2,6 +2,7 @@
     <!-- lesson 1 -->
     <section id="lesson1" class="flex flex-col w-full px-4 gap-4">
         <section id="1_objectives">
+            <h1>Familiarizing with Learning Tasks</h1>
             <h6>In this lesson, you will learn how to:</h6>
             <ul>
                 <li>Recognize significant points in a straightforward article on familiar subject.</li>

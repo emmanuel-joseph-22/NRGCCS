@@ -13,11 +13,6 @@
             </ol>
         </div>
     </section>
-    <Lesson1 />
-    <Lesson2 />
-    <Lesson3 />
-    <Lesson4 />
-    <Lesson5 />
 
     <!-- lesson navigation  -->
     <div class="flex flex-col w-full px-4">
