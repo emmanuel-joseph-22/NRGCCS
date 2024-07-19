@@ -31,7 +31,7 @@
             </div>
         </div>
         <!-- modules view -->
-        <div class="main_cont flex flex-col px-3vw py-8">
+        <div class="main_cont flex flex-col px-4 py-6">
             <router-view></router-view>
         </div>
     </main-page>

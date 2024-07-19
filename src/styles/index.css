@@ -16,3 +16,7 @@
 .btn-secondary {
     @apply bg-gray-500 hover:bg-gray-700;
 }
+
+.module_btn{
+    @apply bg-redBtn shadow-lg px-3 py-2 text-white rounded-lg;
+}

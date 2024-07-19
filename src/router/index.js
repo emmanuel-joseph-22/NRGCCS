@@ -136,9 +136,9 @@ const router = createRouter({
           component: Module4_2,
         },
         {
-          path: '/module2/unit3',
-          name: 'module2_3',
-          component: Module2_3,
+          path: '/module4/unit3',
+          name: 'module4_3',
+          component: Module4_3,
         },
         {
           path: '/module4/unit4',
