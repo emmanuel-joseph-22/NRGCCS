@@ -1,7 +1,10 @@
 <template>
-    <section class="w-10/12">
-        <h1>Using Resources from the Library</h1>
-        <h6>Lesson 2</h6>
+    <section class="flex flex-col w-full px-2 gap-4">
+        <!-- title -->
+        <div class="mb-4">
+            <h1 class="text text-gray-400">LESSON 2</h1>
+            <h1 class="text-xl text-gray-700">Using Resources from the Library</h1>
+        </div>
 
         <div>
             <div>
