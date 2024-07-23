@@ -1,7 +1,10 @@
 <template>
-    <section class="w-10/12">
-        <h1>Collaborating with other Students</h1>
-        <h6>Lesson 3</h6>
+    <section class="flex flex-col w-full px-2 gap-4">
+        <!-- title -->
+        <div class="mb-4">
+            <h1 class="text text-gray-400">LESSON 3</h1>
+            <h1 class="text-xl text-gray-700">Collaborating with other Students</h1>
+        </div>
 
         <div>
             <div>

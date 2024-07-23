@@ -1,90 +1,76 @@
 <template>
     <!-- lesson 1 -->
-    <section id="lesson1" class="flex flex-col w-full px-4 gap-4">
-        <section id="1_objectives">
-            <h1>Familiarizing with Learning Tasks</h1>
+    <section class="flex flex-col w-full px-2 gap-4">
+        <!-- title -->
+        <div class="">
+            <h1 class="text text-gray-400">LESSON 1</h1>
+            <h1 class="text-xl text-gray-700">Familiarizing with Learning Tasks</h1>
+        </div>
+        <section id="" class="my-7">
             <h6>In this lesson, you will learn how to:</h6>
-            <ul>
+            <ul class="list-disc my-2 ml-4">
                 <li>Recognize significant points in a straightforward article on familiar subject.</li>
                 <li>Understand relevant information in everyday material.</li>
                 <li>Write personal email to a friend about attaining high grades by familiarizing with the learning tasks.</li>
             </ul>
         </section>
         <!-- part 1 -->
-        <section class="w-11/12">
-            <h1 class="ml-12">Vocabulary Builder</h1>
-            <h6 class="ml-12">Relate three words for each of the given terms using the words from the box.</h6>
+        <section class="w-full">
+            <h1 class="text-xl">Vocabulary Builder</h1>
+            <h6 class="my-2">Relate three words for each of the given terms using the words from the box.</h6>
 
-            <!-- activity -->
-            <table id="MyTable" border="0" class="mx-auto"> 
-                <tr align="center">
-                    <td><input type="text" class="choices" id="C1_1" value="Article" title="Article" onClick="this.select();"></td>
-                    <td><input type="text" class="choices" id="C1_2" value="Assignment" title="Assignment" onClick="this.select();"></td>
-                    <td><input type="text" class="choices" id="C1_3" value="Classwork" title="Classwork" onClick="this.select();"></td>
-                    <td><input type="text" class="choices" id="C1_4" value="Composition" title="Composition" onClick="this.select();"></td>
-                    <td><input type="text" class="choices" id="C1_5" value="Desktop Publisher" title="Desktop Publisher" onClick="this.select();"></td>
-                </tr>
-                <tr align="center">
-                    <td><input type="text" class="choices" id="C2_1" value="Educational Activity" title="Educational Activity" onClick="this.select();"></td>
-                    <td><input type="text" class="choices" id="C2_2" value="Exercise" title="Exercise" onClick="this.select();"></td>
-                    <td><input type="text" class="choices" id="C2_3" value="Inquiry" title="Inquiry" onClick="this.select();"></td>
-                    <td><input type="text" class="choices" id="C2_4" value="Investigation" title="Investigation" onClick="this.select();"></td>
-                    <td><input type="text" class="choices" id="C2_5" value="Observation" title="Observation" onClick="this.select();"></td>
-                </tr>
-                <tr align="center">
-                    <td><input type="text" class="choices" id="C3_1" value="Piece of Writing" title="Piece of Writing" onClick="this.select();"></td>
-                    <td><input type="text" class="choices" id="C3_2" value="Schoolwork" title="Schoolwork" onClick="this.select();"></td>
-                    <td><input type="text" class="choices" id="C3_3" value="Spreadsheet" title="Spreadsheet" onClick="this.select();"></td>
-                    <td><input type="text" class="choices" id="C3_4" value="Study" title="Study" onClick="this.select();"></td>
-                    <td><input type="text" class="choices" id="C3_5" value="Word Processing" title="Word Processing" onClick="this.select();"></td>
-                </tr>
-            </table>
-
-            <table border="0" class="mx-auto"> 
-                <tr>
-                    <td width="150px">1. Homework</td>
-                    <td><input type="text" id="Txt1_1" placeholder="Drag Here" onClick="this.select();"></td>
-                    <td><input type="text" id="Txt1_2" placeholder="Drag Here" onClick="this.select();"></td>
-                    <td><input type="text" id="Txt1_3" placeholder="Drag Here" onClick="this.select();"></td>
-                </tr>
-                <tr>
-                    <td>2. School Projects</td>
-                    <td><input type="text" id="Txt2_1" placeholder="Drag Here" onClick="this.select();"></td>
-                    <td><input type="text" id="Txt2_2" placeholder="Drag Here" onClick="this.select();"></td>
-                    <td><input type="text" id="Txt2_3" placeholder="Drag Here" onClick="this.select();"></td>
-                </tr>
-                <tr>
-                    <td>3. Essay</td>
-                    <td><input type="text" id="Txt3_1" placeholder="Drag Here" onClick="this.select();"></td>
-                    <td><input type="text" id="Txt3_2" placeholder="Drag Here" onClick="this.select();"></td>
-                    <td><input type="text" id="Txt3_3" placeholder="Drag Here" onClick="this.select();"></td>
-                </tr>
-                <tr>
-                    <td>4. Experiment</td>
-                    <td><input type="text" id="Txt4_1" placeholder="Drag Here" onClick="this.select();"></td>
-                    <td><input type="text" id="Txt4_2" placeholder="Drag Here" onClick="this.select();"></td>
-                    <td><input type="text" id="Txt4_3" placeholder="Drag Here" onClick="this.select();"></td>
-                </tr>
-                <tr>
-                    <td>5. Software</td>
-                    <td><input type="text" id="Txt5_1" placeholder="Drag Here" onClick="this.select();"></td>
-                    <td><input type="text" id="Txt5_2" placeholder="Drag Here" onClick="this.select();"></td>
-                    <td><input type="text" id="Txt5_3" placeholder="Drag Here" onClick="this.select();"></td>
-                </tr>
-            </table>
-        
-            <button @click="check()" class="module_btn mx-auto" id="checkbtn">SUBMIT</button>
-            <button @click="retry()" id="retrybtn" style="display:none;">RETRY</button>
+            <div class="w-10/12 mx-auto">
+                <!-- Activity Choices -->
+                <div class="grid-container">
+                    <div
+                      v-for="(choice, index) in choices"
+                      :key="index"
+                      class="grid-item choices cursor-pointer p-2 rounded-lg shadow-lg text-center"
+                      :draggable="true"
+                      @dragstart="dragStart($event, choice)"
+                      @dragend="dragEnd"
+                    >
+                      {{ choice }}
+                    </div>
+                </div>
             
-            <h2 id="score" style="display:none;"></h2>
+                <!-- Answer Section -->
+                <table class="answer-table mx-auto border-0 mt-4 ">
+                  <tr v-for="(answer, index) in answers" :key="index">
+                    <td width="140px" class="text-left">{{ answer.label }}</td>
+                    <td v-for="(slot, slotIndex) in answer.slots" :key="slotIndex" class="">
+                      <div
+                        class="answer-slot p-2 border border-gray-400 rounded h-12 flex items-center justify-center cursor-pointer mx-2 my-2"
+                        @dragover.prevent
+                        @drop="drop($event, index, slotIndex)"
+                        @click="retractAnswer(index, slotIndex)"
+                      >
+                        {{ slot }}
+                      </div>
+                    </td>
+                  </tr>
+                </table>
             
+                <div class="score-card w-full flex items-center my-4">
+                    <h2 v-if="showScore" class="mx-2 text-xl">Score: {{ score }}</h2>
+                    <div class="ml-auto">
+                        <button @click="retry()" v-if="showRetry" class="module_btn mx-2">RETRY</button>
+                        <button @click="check()" class="btn_submit mx-2">SUBMIT</button>
+                    </div>
+                    
+                </div>
+                
+              </div>
+              <hr class="my-2"/>
         </section>
         <!-- part 2 -->
-        <section class="w-11/12">
-            <h1 class="ml-12">Reading Authentic Text</h1>
-            <h6 class="ml-12">Read the given passage about familiarizing yourself with learning tasks.</h6>
-            <p class="">
-                To achieve good grades in different courses, you need to familiarize yourself with the different 
+        <section class="w-full">
+            <h1 class="text-xl">Reading Authentic Text</h1>
+            <h6 class="my-2">Read the given passage about familiarizing yourself with learning tasks.</h6>
+            <img src="../../../../../public/resources/ReadingAuthenticText.jpg" 
+                class="mx-auto my-3"/>
+            <p class="my-4">
+                "To achieve good grades in different courses, you need to familiarize yourself with the different 
                 learning tasks provided by your teachers. These tasks can take various forms that would require 
                 you to work individually or in groups with other students. In most social science courses, your 
                 teacher may give you homework such as explaining or arguing an idea relevant to the class discussion. 
@@ -93,317 +79,531 @@
                 learning task involves making infographics, brochures, and other portfolios that you may enjoy doing 
                 with software such as word processing, desktop publishing, and the like. Moreover, you will enjoy 
                 working with your classmates on an exciting laboratory experiment that will provide you with actual 
-                experience in using laboratory tools while developing your scientific thinking.
+                experience in using laboratory tools while developing your scientific thinking."
             </p>
+            <hr class="my-2"/>
         </section>
         <!-- part 3 -->
-        <section class="w-11/12">
-            <h1 class="ml-12">Reading Comprehensions Questions</h1>
-            <h6 class="ml-12">Answer the following questions based on the passage that you have read.</h6>
+        <section class="w-full">
+            <h1 class="text-xl">Reading Comprehensions Questions</h1>
+            <h6 class="my-2">Answer the following questions based on the passage that you have read.</h6>
+         
+            <form class="my-4">
+              <div v-for="(question, qIndex) in secondSet" :key="qIndex" class="mb-4">
+                  <p class="my-2">{{ qIndex + 1 }}. {{ question.text }}</p>
+                  <div v-for="(option, oIndex) in question.options" :key="oIndex" class="flex items-center ml-4">
+                  <input type="radio" :id="'first-q' + qIndex + '-' + oIndex" :name="'first-q' + qIndex" :value="option.value" v-model="secondAnswers['q' + (qIndex + 1)]" class="mr-2">
+                  <label :for="'first-q' + qIndex + '-' + oIndex">{{ option.text }}</label>
+                  </div>
+              </div>
+              <div class="score-card w-full flex items-center my-4">
+                <h2 v-if="showScore" class="mx-2 text-xl">Score: {{ score }}</h2>
+                <div class="ml-auto">
+                    <button @click="retrySecondSet" v-if="showRetry" class="module_btn mx-2">RETRY</button>
+                    <button @click="submitSecondSet" class="btn_submit mx-2">SUBMIT</button>
+                </div>
+              </div>
+            </form>
+            <hr class="my-2"/>
         </section>
         <!-- part 4 -->
-        <section class="w-11/12">
-            <h1 class="ml-12">Viewing Authentic Text</h1>
-            <h6 class="ml-12">Examine the given entry for the class standing of a student in a teacher’s class record.</h6>
+        <section class="w-full">
+            <h1 class="text-xl">Viewing Authentic Text</h1>
+            <h6 class="my-2">Examine the given entry for the class standing of a student in a teacher’s class record.</h6>
+            
+            <!-- table -->
+            <div class="p-2">
+              <h2 class="text-lg font-bold text-center my-4">Class Standing</h2>
+              <div class="flex gap-4 justify-center">
+                <div class="p-4">
+                  <h3 class="text-lg font-bold">Drill</h3>
+                  <p class="text-gray-600">(15%)</p>
+                </div>
+                <div class="p-4">
+                  <h3 class="text-lg font-bold">Homework</h3>
+                  <p class="text-gray-600">(15%)</p>
+                </div>
+                <div class="p-4">
+                  <h3 class="text-lg font-bold">Experiment</h3>
+                  <p class="text-gray-600">(30%)</p>
+                </div>
+                <div class="p-4">
+                  <h3 class="text-lg font-bold">Subject</h3>
+                  <p class="text-gray-600">(40%)</p>
+                </div>
+              </div>
+            </div>
+            <hr class="my-4"/>
         </section>
         <!-- part 5 -->
-        <section class="w-11/12">
-            <h1 class="ml-12">Reading Comprehensions Questions</h1>
-            <h6 class="ml-12">Refer to the given entry for the class standing and answer each of the following questions.</h6>
+        <section class="w-full">
+            <h1 class="text-xl">Reading Comprehensions Questions</h1>
+            <h6 class="my-2">Refer to the given entry for the class standing and answer each of the following questions.</h6>
+        
+            <form class="my-4 w-full">
+              <div v-for="(question, index) in thirdSet" :key="index" class="mb-4 flex w-full gap-2 items-center">
+                <input 
+                      type="text" 
+                      v-model="thirdAnswers[index]"
+                      class="border-b border-1 border-black-500 w-5/12 flex-grow p-2 mb-auto" />  
+                <p class="my-2">{{ index + 1 }}. {{ question }}</p>
+              </div>
+              <div class="score-card w-full flex items-center my-4">
+                <h2 v-if="showScore" class="mx-2 text-xl">Score: {{ score }}</h2>
+                <div class="ml-auto">
+                    <button @click="retryThirdSet" v-if="showRetry" class="module_btn mx-2">RETRY</button>
+                    <button @click="submitThirdSet" class="btn_submit mx-2">SUBMIT</button>
+                </div>
+              </div>
+            </form>
+
+            <hr class="my-2"/>
         </section>
         <!-- part 6 -->
-        <section class="w-11/12">
-            <h1 class="ml-12">Grammar Points</h1>
-            <h6 class="ml-12">Access the provided link and study the charts on zero and first conditional and future time clauses.</h6>
+        <section class="w-full">
+            <h1 class="text-xl">Grammar Points</h1>
+            <div class="flex w-10/12 mx-auto gap-4 my-8">
+              <div class="w-5/12">
+                <h6 class="my-2">Access the provided link and study the charts on zero and first conditional and future time clauses.</h6>
+                <a 
+                  href="https://test-english.com/explanation/b1-2/zero-first-conditional-future-time-clauses/"
+                  target="_blank"
+                  class="font-italic text-blue">
+                  Click here
+                </a>
+              </div>
+              <div class="w-7/12">
+                <img src="/resources/test-english.jpg" />
+              </div>
+              
+            </div>
+            
+            <hr class="my-2"/>
         </section>
         <!-- part 7 -->
-        <section class="w-11/12">
-            <h1 class="ml-12">Grammar Skills Activity</h1>
-            <h6 class="ml-12">Examine the conversation between Student A and Student B. Fill in the blanks with the appropriate words inside the parentheses.</h6>
+        <section class="w-full">
+            <h1 class="text-xl">Grammar Skills Activity</h1>
+            <h6 class="my-2">Examine the conversation between Student A and Student B. Fill in the blanks with the appropriate words inside the parentheses.</h6>
+
+            <table border="1" cellpadding="15px" style="border-collapse: collapse; witdh: 100%">
+              <tr v-for="(row, index) in fourthSet" :key="index">
+                <td 
+                    width="120px" 
+                    align="left"
+                    style="padding: 15px;">
+                  {{ row.student }}
+                </td>
+                <td style="padding: 15px;">
+                  <template v-for="(segment, i) in row.segments" :key="i">
+                    <span v-if="segment.type === 'text'">
+                      {{ segment.content }}
+                    </span>
+                    <input 
+                          v-if="segment.type === 'input'" 
+                          type="text" :id="segment.id" 
+                          readonly 
+                          class="text-center text-blue border-b" 
+                          style="width: 80px;" />
+                    <span v-if="segment.type === 'buttons'">
+                      ( 
+                      <button 
+                          v-for="button in segment.buttons" 
+                          :key="button.id" 
+                          :id="button.id" 
+                          @click="button.method" 
+                          class="mx-1 px-2 bg-red rounded">
+                          {{ button.label }}
+                        </button>
+                      )
+                    </span>
+                  </template>
+                </td>
+              </tr>
+            </table>
+
+            <hr class="my-2"/>
         </section>
     </section>
+    <!--footer-->
+    <section class="w-full flex flex-col px-4">
+      <div class="ml-auto">Move to next lesson</div>
+      <router-link 
+          to="/module1/unit1/lesson2"
+          class="ml-auto text-blue">Lesson 2</router-link>
+    </section>
 </template>
-
-<script>
-export default {
-    methods: {
-        DisableKeyboard(){
-            document.onkeydown = function (e){
-                return false;
-            }
-        },
         
-        check() {
-            var score = 0;
-    
-            var Txt1_1 = document.getElementById("Txt1_1").value;
-            var Txt1_2 = document.getElementById("Txt1_2").value;
-            var Txt1_3 = document.getElementById("Txt1_3").value;
-    
-            var Txt2_1 = document.getElementById("Txt2_1").value;
-            var Txt2_2 = document.getElementById("Txt2_2").value;
-            var Txt2_3 = document.getElementById("Txt2_3").value;
-    
-            var Txt3_1 = document.getElementById("Txt3_1").value;
-            var Txt3_2 = document.getElementById("Txt3_2").value;
-            var Txt3_3 = document.getElementById("Txt3_3").value;
-    
-            var Txt4_1 = document.getElementById("Txt4_1").value;
-            var Txt4_2 = document.getElementById("Txt4_2").value;
-            var Txt4_3 = document.getElementById("Txt4_3").value;
-    
-            var Txt5_1 = document.getElementById("Txt5_1").value;
-            var Txt5_2 = document.getElementById("Txt5_2").value;
-            var Txt5_3 = document.getElementById("Txt5_3").value;
-    
-            //******Number 1*******
-            if (Txt1_1 == "Assignment" || Txt1_1 == "Study" || Txt1_1 == "Classwork"){ 
-                document.getElementById("Txt1_1").style.background = "#ADFF2F"; //Correct
-                score += 1;
-            } else {
-                document.getElementById("Txt1_1").style.background = "#CD5C5C"; //Incorrect
-            }
-    
-            if (Txt1_2 == "Assignment" || Txt1_2 == "Study" || Txt1_2 == "Classwork"){ 
-                document.getElementById("Txt1_2").style.background = "#ADFF2F"; //Correct
-                score += 1;
-            } else {
-                document.getElementById("Txt1_2").style.background = "#CD5C5C"; //Incorrect
-            }
-    
-            if (Txt1_3 == "Assignment" || Txt1_3 == "Study" || Txt1_3 == "Classwork"){ 
-                document.getElementById("Txt1_3").style.background = "#ADFF2F"; //Correct
-                score += 1;
-            } else {
-                document.getElementById("Txt1_3").style.background = "#CD5C5C"; //Incorrect
-            }
-            
-            //******Number 2*******
-            if (Txt2_1 == "Educational Activity" || Txt2_1 == "Exercise" || Txt2_1 == "Schoolwork"){ 
-                document.getElementById("Txt2_1").style.background = "#ADFF2F"; //Correct
-                score += 1;
-            } else {
-                document.getElementById("Txt2_1").style.background = "#CD5C5C"; //Incorrect
-            }
-    
-            if (Txt2_2 == "Educational Activity" || Txt2_2 == "Exercise" || Txt2_2 == "Schoolwork"){ 
-                document.getElementById("Txt2_2").style.background = "#ADFF2F"; //Correct
-                score += 1;
-            } else {
-                document.getElementById("Txt2_2").style.background = "#CD5C5C"; //Incorrect
-            }
-    
-            if (Txt2_3 == "Educational Activity" || Txt2_3 == "Exercise" || Txt2_3 == "Schoolwork"){ 
-                document.getElementById("Txt2_3").style.background = "#ADFF2F"; //Correct
-                score += 1;
-            } else {
-                document.getElementById("Txt2_3").style.background = "#CD5C5C"; //Incorrect
-            }
-    
-            //******Number 3*******
-            if (Txt3_1 == "Piece of Writing" || Txt3_1 == "Article" || Txt3_1 == "Composition"){ 
-                document.getElementById("Txt3_1").style.background = "#ADFF2F"; //Correct
-                score += 1;
-            } else {
-                document.getElementById("Txt3_1").style.background = "#CD5C5C"; //Incorrect
-            }
-    
-            if (Txt3_2 == "Piece of Writing" || Txt3_2 == "Article" || Txt3_2 == "Composition"){ 
-                document.getElementById("Txt3_2").style.background = "#ADFF2F"; //Correct
-                score += 1;
-            } else {
-                document.getElementById("Txt3_2").style.background = "#CD5C5C"; //Incorrect
-            }
-    
-            if (Txt3_3 == "Piece of Writing" || Txt3_3 == "Article" || Txt3_3 == "Composition"){ 
-                document.getElementById("Txt3_3").style.background = "#ADFF2F"; //Correct
-                score += 1;
-            } else {
-                document.getElementById("Txt3_3").style.background = "#CD5C5C"; //Incorrect
-            }
-    
-            //******Number 4*******
-            if (Txt4_1 == "Investigation" || Txt4_1 == "Observation" || Txt4_1 == "Inquiry"){ 
-                document.getElementById("Txt4_1").style.background = "#ADFF2F"; //Correct
-                score += 1;
-            } else {
-                document.getElementById("Txt4_1").style.background = "#CD5C5C"; //Incorrect
-            }
-    
-            if (Txt4_2 == "Investigation" || Txt4_2 == "Observation" || Txt4_2 == "Inquiry"){ 
-                document.getElementById("Txt4_2").style.background = "#ADFF2F"; //Correct
-                score += 1;
-            } else {
-                document.getElementById("Txt4_2").style.background = "#CD5C5C"; //Incorrect
-            }
-    
-            if (Txt4_3 == "Investigation" || Txt4_3 == "Observation" || Txt4_3 == "Inquiry"){ 
-                document.getElementById("Txt4_3").style.background = "#ADFF2F"; //Correct
-                score += 1;
-            } else {
-                document.getElementById("Txt4_3").style.background = "#CD5C5C"; //Incorrect
-            }
-    
-            //******Number 5*******
-            if (Txt5_1 == "Desktop Publisher" || Txt5_1 == "Spreadsheet" || Txt5_1 == "Word Processing"){ 
-                document.getElementById("Txt5_1").style.background = "#ADFF2F"; //Correct
-                score += 1;
-            } else {
-                document.getElementById("Txt5_1").style.background = "#CD5C5C"; //Incorrect
-            }
-    
-            if (Txt5_2 == "Desktop Publisher" || Txt5_2 == "Spreadsheet" || Txt5_2 == "Word Processing"){ 
-                document.getElementById("Txt5_2").style.background = "#ADFF2F"; //Correct
-                score += 1;
-            } else {
-                document.getElementById("Txt5_2").style.background = "#CD5C5C"; //Incorrect
-            }
-    
-            if (Txt5_3 == "Desktop Publisher" || Txt5_3 == "Spreadsheet" || Txt5_3 == "Word Processing"){ 
-                document.getElementById("Txt5_3").style.background = "#ADFF2F"; //Correct
-                score += 1;
-            } else {
-                document.getElementById("Txt5_3").style.background = "#CD5C5C"; //Incorrect
-            }
-            document.getElementById("score").style.display = "block"; 
-            document.getElementById("score").innerHTML = "Score: " + score; 
-            document.getElementById("retrybtn").style.display = "block"; 
-            document.getElementById("checkbtn").style.display = "none"; 
-            locked();
-        },
-       
-        retry(){
-            var score = 0;
-    
-            unlocked();
-            clear_color();
-            clear_text();
-            clear_choices();
+<script>
+import { ref } from 'vue';
 
-            document.getElementById("score").style.display = "none"; 
-            document.getElementById("retrybtn").style.display = "none"; 
-            document.getElementById("checkbtn").style.display = "block"; 
-            
-             
+export default {
+  data(){
+    return{
+      secondSet: [
+        { 
+            text: 'Which learning task is commonly done independently?', 
+            options: [
+                { text: 'A. homework', value: 'A' }, 
+                { text: 'B. school project', value: 'B' }, 
+                { text: 'C. essay', value: 'C' }, 
+                { text: 'D. experiment', value: 'D' }
+            ] },
+        { 
+            text: 'Which is likely to be the reason for an independent learning task?', 
+            options: [
+                { text: 'A. It is easy to accomplish alone', value: 'A' }, 
+                { text: 'B. It is designed for introverts', value: 'B' }, 
+                { text: 'C. It requires focus and concentration', value: 'C' }, 
+                { text: 'D. It develops one to be an independent learner', value: 'D' }
+            ] },
+        { 
+            text: 'Which of the following learning tasks is least associated with collaboration?', 
+            options: [
+                { text: 'A. homework', value: 'A' }, 
+                { text: 'B. school projet', value: 'B' }, 
+                { text: 'C. essay', value: 'C' }, 
+                { text: 'D. experiment', value: 'D' }
+            ] },
+        { 
+            text: 'Why it is important to be familiarized with the different learning tasks?', 
+            options: [
+                { text: 'A. To spend quality time with classmates', value: 'A' }, 
+                { text: 'B. To enjoy doing the assigned learning tasks', value: 'B' }, 
+                { text: 'C. To comply with the course requirements', value: 'C' }, 
+                { text: 'D. To achieve good grades.', value: 'D' }] },
+        { 
+            text: 'Which of the following can be an alternative title for this passage?', 
+            options: [
+                { text: 'A. Course Collaboration', value: 'A' }, 
+                { text: 'B. Types of Learning Tasks', value: 'B' }, 
+                { text: 'C. Enjoyment of Doing Learning Tasks', value: 'C' }, 
+                { text: 'D. School is Cool', value: 'D' }] }
+        ],
+      secondAnswers: {
+        q1: '',
+        q2: '',
+        q3: '',
+        q4: '',
+        q5: ''
+      },
+      thirdSet: [
+          'Which among the components is given the most weight for class standing?', 
+          'Which component provides the least contribution to the weighted grade of the class standing?', 
+          'In attaining a high grade, which component should be given priority by a student?',
+          'Which components are given equal weights for the class standing?',
+          'Considering that the average performance for class standing is 83, which of the following can best describe the performance of the student indicated in the given class record: below average, average, or above average?',
+      ],
+      thirdAnswers: [],
+      fourthSet: [
+        {
+          student: "Student A:",
+          segments: [
+            { type: "text", content: "I think if we submit the project on time, we " },
+            { type: "input", id: "Ans1" },
+            {
+              type: "buttons",
+              buttons: [
+                { id: "btn1", label: "will", method: () => this.C1_1() },
+                { id: "btn2", label: "will be", method: () => this.C1_2() }
+              ]
+            },
+            { type: "text", content: " pass the course and obtain good grades." }
+          ]
         },
-    
-        locked(){
-            document.getElementById("Txt1_1").readOnly = true;
-            document.getElementById("Txt1_2").readOnly = true;
-            document.getElementById("Txt1_3").readOnly = true;
-    
-            document.getElementById("Txt2_1").readOnly = true;
-            document.getElementById("Txt2_2").readOnly = true;
-            document.getElementById("Txt2_3").readOnly = true;
-    
-            document.getElementById("Txt3_1").readOnly = true;
-            document.getElementById("Txt3_2").readOnly = true;
-            document.getElementById("Txt3_3").readOnly = true;
-    
-            document.getElementById("Txt4_1").readOnly = true;
-            document.getElementById("Txt4_2").readOnly = true;
-            document.getElementById("Txt4_3").readOnly = true;
-    
-            document.getElementById("Txt5_1").readOnly = true;
-            document.getElementById("Txt5_2").readOnly = true;
-            document.getElementById("Txt5_3").readOnly = true;   
+        {
+          student: "Student B:",
+          segments: [
+            { type: "input", id: "Ans2" },
+            {
+              type: "buttons",
+              buttons: [
+                { id: "btn3", label: "I think so too", method: () => this.C2_1() },
+                { id: "btn4", label: "Neither do I", method: () => this.C2_2() }
+              ]
+            },
+            { type: "text", content: " We need to work hard in accomplishing those infographic materials on time as part of our school project." }
+          ]
         },
-    
-        unlocked(){
-            document.getElementById("Txt1_1").readOnly = false;
-            document.getElementById("Txt1_2").readOnly = false;
-            document.getElementById("Txt1_3").readOnly = false;
-    
-            document.getElementById("Txt2_1").readOnly = false;
-            document.getElementById("Txt2_2").readOnly = false;
-            document.getElementById("Txt2_3").readOnly = false;
-    
-            document.getElementById("Txt3_1").readOnly = false;
-            document.getElementById("Txt3_2").readOnly = false;
-            document.getElementById("Txt3_3").readOnly = false;
-    
-            document.getElementById("Txt4_1").readOnly = false;
-            document.getElementById("Txt4_2").readOnly = false;
-            document.getElementById("Txt4_3").readOnly = false;
-    
-            document.getElementById("Txt5_1").readOnly = false;
-            document.getElementById("Txt5_2").readOnly = false;
-            document.getElementById("Txt5_3").readOnly = false;   
+        {
+          student: "Student A:",
+          segments: [
+            { type: "input", id: "Ans3" },
+            {
+              type: "buttons",
+              buttons: [
+                { id: "btn5", label: "Well not really", method: () => this.C3_1() },
+                { id: "btn6", label: "Exactly!", method: () => this.C3_2() }
+              ]
+            },
+            { type: "text", content: " If we don't prioritize this, we " },
+            { type: "input", id: "Ans4" },
+            {
+              type: "buttons",
+              buttons: [
+                { id: "btn7", label: "will not", method: () => this.C4_1() },
+                { id: "btn8", label: "could not", method: () => this.C4_2() }
+              ]
+            },
+            { type: "text", content: " make it on time." }
+          ]
         },
-    
-        clear_color(){
-            document.getElementById("Txt1_1").style.background = "";
-            document.getElementById("Txt1_2").style.background = "";
-            document.getElementById("Txt1_3").style.background = "";
-    
-            document.getElementById("Txt2_1").style.background = "";
-            document.getElementById("Txt2_2").style.background = "";
-            document.getElementById("Txt2_3").style.background = "";
-    
-            document.getElementById("Txt3_1").style.background = "";
-            document.getElementById("Txt3_2").style.background = "";
-            document.getElementById("Txt3_3").style.background = "";
-    
-            document.getElementById("Txt4_1").style.background = "";
-            document.getElementById("Txt4_2").style.background = "";
-            document.getElementById("Txt4_3").style.background = "";
-    
-            document.getElementById("Txt5_1").style.background = "";
-            document.getElementById("Txt5_2").style.background = "";
-            document.getElementById("Txt5_3").style.background = "";
-        },
-    
-        clear_text(){
-            document.getElementById("Txt1_1").value = "";
-            document.getElementById("Txt1_2").value = "";
-            document.getElementById("Txt1_3").value = "";
-    
-            document.getElementById("Txt2_1").value = "";
-            document.getElementById("Txt2_2").value = "";
-            document.getElementById("Txt2_3").value = "";
-    
-            document.getElementById("Txt3_1").value = "";
-            document.getElementById("Txt3_2").value = "";
-            document.getElementById("Txt3_3").value = "";
-    
-            document.getElementById("Txt4_1").value = "";
-            document.getElementById("Txt4_2").value = "";
-            document.getElementById("Txt4_3").value = "";
-    
-            document.getElementById("Txt5_1").value = "";
-            document.getElementById("Txt5_2").value = "";
-            document.getElementById("Txt5_3").value = "";
-        },
-
-        clear_choices(){
-            document.getElementById("C1_1").value = "Article";
-            document.getElementById("C1_2").value = "Assignment";
-            document.getElementById("C1_3").value = "Classwork";
-            document.getElementById("C1_4").value = "Composition";
-            document.getElementById("C1_5").value = "Desktop Publisher";
-
-            document.getElementById("C2_1").value = "Educational Activity";
-            document.getElementById("C2_2").value = "Exercise";
-            document.getElementById("C2_3").value = "Inquiry";
-            document.getElementById("C2_4").value = "Investigation";
-            document.getElementById("C2_5").value = "Observation";
-
-            document.getElementById("C3_1").value = "Piece of Writing";
-            document.getElementById("C3_2").value = "Schoolwork";
-            document.getElementById("C3_3").value = "Spreadsheet";
-            document.getElementById("C3_4").value = "Study";
-            document.getElementById("C3_5").value = "Word Processing";
-        },
+        {
+          student: "Student B:",
+          segments: [
+            { type: "input", id: "Ans5" },
+            {
+              type: "buttons",
+              buttons: [
+                { id: "btn9", label: "You're right", method: () => this.C5_1() },
+                { id: "btn10", label: "So do I", method: () => this.C5_2() }
+              ]
+            },
+            { type: "text", content: " We will be celebrating soon if we " },
+            { type: "input", id: "Ans6" },
+            {
+              type: "buttons",
+              buttons: [
+                { id: "btn11", label: "submit", method: () => this.C6_1() },
+                { id: "btn12", label: "will submit", method: () => this.C6_2() }
+              ]
+            },
+            { type: "text", content: " it with quality and ahead of time." }
+          ]
+        }
+      ],
     }
-}
+  },
+  methods:{
+    submitSecondSet() {
+        console.log(this.secondAnswers);
+    },
+    C1_1() {
+      document.getElementById('Ans1').value = 'will';
+    },
+    C1_2() {
+      document.getElementById('Ans1').value = 'will be';
+    },
+    C2_1() {
+      document.getElementById('Ans2').value = 'I think so too';
+    },
+    C2_2() {
+      document.getElementById('Ans2').value = 'Neither do I';
+    },
+    C3_1() {
+      document.getElementById('Ans3').value = 'Well not really';
+    },
+    C3_2() {
+      document.getElementById('Ans3').value = 'Exactly!';
+    },
+    C4_1() {
+      document.getElementById('Ans4').value = 'will not';
+    },
+    C4_2() {
+      document.getElementById('Ans4').value = 'could not';
+    },
+    C5_1() {
+      document.getElementById('Ans5').value = "You're right";
+    },
+    C5_2() {
+      document.getElementById('Ans5').value = 'So do I';
+    },
+    C6_1() {
+      document.getElementById('Ans6').value = 'submit';
+    },
+    C6_2() {
+      document.getElementById('Ans6').value = 'will submit';
+    }
+  },  
+  // pang matchy matchy boxes assessment
+  setup() {
+    const choices = ref([
+      'Article', 'Assignment', 'Classwork', 'Composition', 'Desktop Publisher',
+      'Educational Activity', 'Exercise', 'Inquiry', 'Investigation', 'Observation',
+      'Piece of Writing', 'Schoolwork', 'Spreadsheet', 'Study', 'Word Processing'
+    ]);
+
+    const answers = ref([
+      { label: '1. Homework', slots: ['', '', ''] },
+      { label: '2. School Projects', slots: ['', '', ''] },
+      { label: '3. Essay', slots: ['', '', ''] },
+      { label: '4. Experiment', slots: ['', '', ''] },
+      { label: '5. Software', slots: ['', '', ''] }
+    ]);
+
+    const draggedItem = ref(null);
+    const score = ref(0);
+    const showScore = ref(false);
+    const showRetry = ref(false);
+
+    const dragStart = (event, choice) => {
+      draggedItem.value = choice;
+    };
+
+    const dragEnd = () => {
+      draggedItem.value = null;
+    };
+
+    const drop = (event, answerIndex, slotIndex) => {
+      if (!answers.value[answerIndex].slots[slotIndex]) {
+        answers.value[answerIndex].slots[slotIndex] = draggedItem.value;
+        choices.value = choices.value.filter(choice => choice !== draggedItem.value);
+      }
+    };
+
+    const retractAnswer = (answerIndex, slotIndex) => {
+      const item = answers.value[answerIndex].slots[slotIndex];
+      if (item) {
+        choices.value.push(item);
+        answers.value[answerIndex].slots[slotIndex] = '';
+      }
+    };
+
+    const check = () => {
+      let currentScore = 0;
+
+      // Sample correct answers. Replace with your actual answer logic.
+      const correctAnswers = [
+        ['Assignment', 'Study', 'Classwork'],
+        ['Educational Activity', 'Exercise', 'Schoolwork'],
+        ['Piece of Writing', 'Article', 'Composition'],
+        ['Investigation', 'Observation', 'Inquiry'],
+        ['Desktop Publisher', 'Spreadsheet', 'Word Processing']
+      ];
+
+      answers.value.forEach((answer, index) => {
+        answer.slots.forEach((slot, slotIndex) => {
+          if (correctAnswers[index].includes(slot)) {
+            currentScore++;
+          }
+        });
+      });
+
+      score.value = currentScore;
+      showScore.value = true;
+      showRetry.value = true;
+    };
+
+    const retry = () => {
+      choices.value = [
+        'Article', 'Assignment', 'Classwork', 'Composition', 'Desktop Publisher',
+        'Educational Activity', 'Exercise', 'Inquiry', 'Investigation', 'Observation',
+        'Piece of Writing', 'Schoolwork', 'Spreadsheet', 'Study', 'Word Processing'
+      ];
+      
+      answers.value = [
+        { label: '1. Homework', slots: ['', '', ''] },
+        { label: '2. School Projects', slots: ['', '', ''] },
+        { label: '3. Essay', slots: ['', '', ''] },
+        { label: '4. Experiment', slots: ['', '', ''] },
+        { label: '5. Software', slots: ['', '', ''] }
+      ];
+
+      score.value = 0;
+      showScore.value = false;
+      showRetry.value = false;
+    };
+
+    //
+
+
+    return {
+      choices,
+      answers,
+      dragStart,
+      dragEnd,
+      drop,
+      retractAnswer,
+      check,
+      retry,
+      score,
+      showScore,
+      showRetry
+    };
+  }
+};
 </script>
 
-<style>
-    .choices{
-        text-align: center; 
-        }
-    input{
-        height: 30px;
-        
+<style scoped>
+.answer-slot {
+  min-width: 100px;
+}
+.choices{
+    background-color: rgb(255, 197, 197);
+}
+.choices:active {
+  opacity: 0.5;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem; /* Space between items */
+    width: 100%;
+    max-width: 1200px; /* Optional: max width to fit the viewport */
+    margin: 0 auto; /* Center the grid container */
+  }
+  
+  .grid-item {
+    background-color: footerRed;
+    transition: background-color 0.3s;
+    max-width: 200px;
+  }
+  
+  .grid-item:hover {
+    background-color: #dfe6ffb9; /* Slightly darker gray on hover */
+  }
+  
+  /* Media queries to control grid columns at different breakpoints */
+  @media (max-width: 1200px) {
+    .grid-container {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
+  }
+  
+  @media (max-width: 768px) {
+    .grid-container {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .grid-container {
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+  }
+
+
+.answer-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+.answer-table td {
+    padding: 0.5rem;
+    text-align: center;
+  }
+  
+.answer-slot {
+    background-color: #f3f4f6;
+    transition: background-color 0.3s;
+}
+  
+.answer-slot:hover {
+    background-color: #e5e7eb; /* Slightly darker gray on hover */
+}
+  
+  /* Responsive design for smaller screens */
+  @media (max-width: 768px) {
+    .answer-table td{
+      padding: 0.5rem;
+      font-size: 0.875rem; /* Adjust font size for smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .answer-table td{
+      padding: 0.5rem;
+      font-size: 0.75rem; /* Further adjust font size for very small screens */
+    }
+  }
 </style>
