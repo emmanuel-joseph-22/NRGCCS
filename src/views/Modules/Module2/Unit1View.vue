@@ -2,13 +2,13 @@
     <!-- table of contents -->
     <section class="flex flex-col w-full px-4">
         <div class="mx-4">
-            <h1>Lessons</h1>
+            <h1>UNIT 1: Conversing with Purpose</h1>
             <ol>
-                <li>Familiarizing with Learning Tasks</li>
-                <li>Accessing Resources at the Library</li>
-                <li>Collaborating with other Students</li>
-                <li>Consulting Class Facilitators & Advisers</li>
-                <li>Working at the Laboratory</li>
+                <li>1. Introducing Strangers to Each Other</li>
+                <li>2. How Do I Get There?</li>
+                <li>3. Expressing Request</li>
+                <li>4. Getting Things Done</li>
+                <li>5. Apologizing</li>
             </ol>
         </div>
     </section>

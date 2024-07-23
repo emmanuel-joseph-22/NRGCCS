@@ -2,13 +2,13 @@
     <!-- table of contents -->
     <section class="flex flex-col w-full px-4">
         <div class="mx-4">
-            <h1>Lessons</h1>
+            <h1>UNIT 3: Leisure and Recreation</h1>
             <ol>
-                <li>Familiarizing with Learning Tasks</li>
-                <li>Accessing Resources at the Library</li>
-                <li>Collaborating with other Students</li>
-                <li>Consulting Class Facilitators & Advisers</li>
-                <li>Working at the Laboratory</li>
+                <li>1. A Walk That's Always Worthwhile</li>
+                <li>2. Scenematic Ventures</li>
+                <li>3. More Than Just Staing Fit</li>
+                <li>4. Exploring Beaches</li>
+                <li>5. Chasing Heights</li>
             </ol>
         </div>
     </section>
