@@ -148,7 +148,7 @@
         <router-link 
             to="/module1/unit1/lesson3"
             class="ml-auto text-blue">Lesson 3</router-link>
-        </section>
+    </section>
 </template>
 
 <script>
