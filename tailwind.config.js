@@ -12,6 +12,7 @@ export default {
         customRed: '#A52639',
         footerRed: '#721C2F',
         redBtn: '#DD3745',
+        accentBlue: '#6787e9',
       }
     },
   },
