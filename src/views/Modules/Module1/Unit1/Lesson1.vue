@@ -185,7 +185,7 @@
             <h1 class="text-xl">Grammar Skills Activity</h1>
             <h6 class="my-2">Examine the conversation between Student A and Student B. Fill in the blanks with the appropriate words inside the parentheses.</h6>
 
-            <table border="1" cellpadding="15px" style="border-collapse: collapse; witdh: 100%">
+            <table border="1" cellpadding="15px" style="border-collapse: collapse; width: 100%">
               <tr v-for="(row, index) in fourthSet" :key="index">
                 <td 
                     width="120px" 
