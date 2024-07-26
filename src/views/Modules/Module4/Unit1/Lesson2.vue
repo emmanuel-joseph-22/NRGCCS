@@ -26,14 +26,16 @@
       <th class="py-2 border border-gray-400 text-center">Artwork</th>
       <th class="py-2 border border-gray-400 text-center">Options</th>
     </tr>
+
   </thead>
   <tbody>
     <tr v-for="(answer, index) in answer" :key="index" class="py-2 border border-gray-400 text-center">
-      <td width="180px" class="text-left" v-html="answer.label"></td>
+      <td width="180px" class="" v-html="answer.label"></td>
       <td class="py-2 border border-gray-400 text-center">
-        <div class="answer-input-wrapper">
-          <input v-model="answer.options" class="answer-input">
-        </div>
+          <div v-for="(option, oIndex) in answer.options" :key="oIndex" class="flex ml-4">
+            <input type="radio" :id="index + '-' + oIndex" :value="option.value" v-model="set1Answers['q' + (index + 1)]" class="mr-2">
+            <label :for="index + '-' + oIndex" class="text-left">{{ option.text }}</label>
+          </div>
       </td>
     </tr>
   </tbody>
@@ -44,24 +46,100 @@
 </template>
 
 <script>
-import { ref } from 'vue';
-  
   export default {
-    setup() {
-const answer = ref([
-        { label: '<img src="/resources/Petronas.jpg" alt="Petronas Twin Towers" style="max-width: 100%; height: auto;" />', options: ''},
-        { label: '<img src="/resources/chocolate_hills.jpg" alt="Chocolate Hills" style="max-width: 100%; height: auto;" />', options: ''},
-        { label: '<img src="/resources/colosseum.jpg" alt="Colosseum" style="max-width: 100%; height: auto;" />', options: '' },
-        { label: '<img src="/resources/pisa_tower.jpg" alt="Leaning Tower of Pisa" style="max-width: 100%; height: auto;" />', options: '' },
-        { label: '<img src="/resources/machu-picchu.jpg" alt="Machu Picchu" style="max-width: 100%; height: auto;" />', options: '' },
-        { label: '<img src="/resources/christ_the_redeemer.jpg" alt="Christ the Redeemer" style="max-width: 100%; height: auto;" />', options: ''},
-        { label: '<img src="/resources/statue_of_liberty.jpg" alt="Statue of Liberty" style="max-width: 100%; height: auto;" />', options: '' },
-        { label: '<img src="/resources/stonehenge.jpg" alt="Stonehenge" style="max-width: 100%; height: auto;" />', options: '' },
-        { label: '<img src="/resources/sydney_bridge.jpg" alt="Sydney Opera House" style="max-width: 100%; height: auto;" />', options: ''},
-        { label: '<img src="/resources/great_wall_of_china.jpg" alt="Great Wall of China" style="max-width: 100%; height: auto;" />', options: ''},
-      ]);
-      return {
-        answer
+
+    data(){
+      return{
+        answer: [
+              { label: '<img src="/resources/Petronas.jpg" alt="Petronas Twin Towers" style="max-width: 100%; height: auto;" />', 
+                  options: [
+                    { text: 'A. American Gothic, Grant Wood', value: 'A' }, 
+                    { text: 'B. Mona Lisa, Leonardo Da Vinci', value: 'B' }, 
+                    { text: 'C. Guernica, Pablo Picasso', value: 'C' }, 
+                    { text: 'D. The Son of Man, Rene Magritte', value: 'D' }
+                ] 
+              },
+              { label: '<img src="/resources/chocolate_hills.jpg" alt="Chocolate Hills" style="max-width: 100%; height: auto;" />',   
+                options: [
+                      { text: 'A. Arnolfini Ptrait, Van Eyck', value: 'A' }, 
+                      { text: 'B. The Kiss, Gustav Klint', value: 'B' }, 
+                      { text: 'C. Napoleon Crossing the Alps, Jacques-Louis David', value: 'C' }, 
+                      { text: 'D. Nighthawks, Edward Hopper', value: 'D' }
+                  ] 
+              },
+              { label: '<img src="/resources/colosseum.jpg" alt="Colosseum" style="max-width: 100%; height: auto;" />', 
+                  options: [
+                      { text: 'A. The Starry Night, Vincent Van Gogh', value: 'A' }, 
+                      { text: 'B. No. 5, 1984, Jackson Pollock', value: 'B' }, 
+                      { text: 'C. Flaming June, Frederic Leighton', value: 'C' }, 
+                      { text: 'D. Lady with an Ermine, Leonardo da Vinci', value: 'D' }
+                  ] 
+               },
+              { label: '<img src="/resources/pisa_tower.jpg" alt="Leaning Tower of Pisa" style="max-width: 100%; height: auto;" />',
+                  options: [
+                      { text: 'A. Café Terrace at Night, Vincent van Gogh', value: 'A' }, 
+                      { text: 'B. Nighthawks, Edward Hopper', value: 'B' }, 
+                      { text: 'C. Primavera, Sandro Botticelli', value: 'C' }, 
+                      { text: 'D. Persistence of Memory, Salvador Dali', value: 'D' }
+                  ] 
+               },
+              { label: '<img src="/resources/machu-picchu.jpg" alt="Machu Picchu" style="max-width: 100%; height: auto;" />', 
+                  options: [
+                      { text: 'A. American Gothic, Grant Wood', value: 'A' }, 
+                      { text: 'B. Lady with an Ermine, Leonardo da Vinci', value: 'B' }, 
+                      { text: 'C. The Ambassadors, Hans Holbein the Younger', value: 'C' }, 
+                      { text: 'D. Annunciation, Leonardo Da Vinci', value: 'D' }
+                  ] 
+               },
+               /*
+              { label: '<img src="/resources/christ_the_redeemer.jpg" alt="Christ the Redeemer" style="max-width: 100%; height: auto;" />',
+                  options: [
+                      { text: 'A. ', value: 'A' }, 
+                      { text: 'B. ', value: 'B' }, 
+                      { text: 'C. ', value: 'C' }, 
+                      { text: 'D. ', value: 'D' }
+                  ] 
+              },
+              { label: '<img src="/resources/statue_of_liberty.jpg" alt="Statue of Liberty" style="max-width: 100%; height: auto;" />', 
+                  options: [
+                      { text: 'A. ', value: 'A' }, 
+                      { text: 'B. ', value: 'B' }, 
+                      { text: 'C. ', value: 'C' }, 
+                      { text: 'D. ', value: 'D' }
+                  ] 
+              },
+              { label: '<img src="/resources/stonehenge.jpg" alt="Stonehenge" style="max-width: 100%; height: auto;" />', 
+                  options: [
+                      { text: 'A. ', value: 'A' }, 
+                      { text: 'B. ', value: 'B' }, 
+                      { text: 'C. ', value: 'C' }, 
+                      { text: 'D. ', value: 'D' }
+                  ] 
+               },
+              { label: '<img src="/resources/sydney_bridge.jpg" alt="Sydney Opera House" style="max-width: 100%; height: auto;" />', 
+                  options: [
+                      { text: 'A. ', value: 'A' }, 
+                      { text: 'B. ', value: 'B' }, 
+                      { text: 'C. ', value: 'C' }, 
+                      { text: 'D. ', value: 'D' }
+                  ] 
+              },
+              { label: '<img src="/resources/great_wall_of_china.jpg" alt="Great Wall of China" style="max-width: 100%; height: auto;" />', 
+                  options: [
+                      { text: 'A. ', value: 'A' }, 
+                      { text: 'B. ', value: 'B' }, 
+                      { text: 'C. ', value: 'C' }, 
+                      { text: 'D. ', value: 'D' }
+                  ] 
+              },*/
+        ],
+        set1Answers: {
+          q1: '',
+          q2: '',
+          q3: '',
+          q4: '',
+        }
       }
-    }}
+    }
+  }
 </script>
