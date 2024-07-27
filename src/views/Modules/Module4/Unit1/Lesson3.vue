@@ -108,7 +108,7 @@
            <button @click="correct()" class="btn_submit mx-2">SUBMIT</button>
          </div>
        </div>
-   
+
        <hr class="my-2"/>
      </section>
  </template>

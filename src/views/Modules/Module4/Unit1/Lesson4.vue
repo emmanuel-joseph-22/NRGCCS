@@ -1,5 +1,6 @@
 <template>
-    <section class="w-10/12">
+  <section class="w-10/12">
     
-    </section>
+  </section>
+
 </template>
