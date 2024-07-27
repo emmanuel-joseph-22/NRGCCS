@@ -11,7 +11,7 @@ export default{
     },
     data(){
         return{
-            
+            guest_email: ''
         }
     },  
     components:{

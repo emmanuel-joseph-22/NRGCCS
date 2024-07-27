@@ -278,7 +278,7 @@ export default {
                 { text: 'B. Types of Learning Tasks', value: 'B' }, 
                 { text: 'C. Enjoyment of Doing Learning Tasks', value: 'C' }, 
                 { text: 'D. School is Cool', value: 'D' }] }
-        ],
+      ],
       secondAnswers: {
         q1: '',
         q2: '',
